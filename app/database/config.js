@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-
+const uri = process.env.DATABASE_URI;
 async function connect() {
     try {
-        await mongoose.connect(
-            `mongodb+srv://furnitureDB:root@cluster0.ppki6ji.mongodb.net/furniture`
-        );
+        await mongoose.connect(uri);
         console.log('Connect Successfully!!!');
     } catch (error) {
         console.log('Connect to Database failed!!!');
